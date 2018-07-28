@@ -1,0 +1,14 @@
+#!/bin/bash
+
+deviceID=$(xinput list | grep -i touchpad | cut -d ' ' -f 23 | cut -d '=' -f 2 | cut -c1-3) #Finds ID for all touchpads provided that they are labeled as such by the manufacturer.
+status=$(xinput list-props $deviceID | grep -i "device enabled" | cut -c24) #Determines if said touchpad is enabled or not, 1 is enabled, 0 is disabled
+if [ "$status" == 1 ]; then
+	xinput --disable $deviceID
+	echo "trackpad disabled"
+elif [ "$status" == 0 ]; then
+	xinput --enable $deviceID
+	echo "trackpad enabled"
+else 
+	echo "Either trackpad does not exist or script is critically flawed"
+fi
+#echo is used to give feedback to user, but only if executed in a terminal shell
