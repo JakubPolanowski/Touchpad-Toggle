@@ -1,18 +1,21 @@
 # Touchpad_toggle
 
-This is a shell script that will toggle a laptop's touchpad on and off. The script was written so that the manufacturer of the laptop (or touchpad) does not matter. 
+This is a shell script that will toggle a laptop's touchpad on and off. The script was written so that the manufacturer of the laptop/touchpad does not matter. 
 
-# Installation
+# Installation 
 
 ## Dependencies 
-Requires xinput, which every if not almost every Linux distro should have by default
 
-Simply git clone or download the zip then set permissions via sudo chmod a+x 
+* Requires `xinput` (odds are most Linux distro have it pre-installed)
 
-#Usage
+## Installing
 
-Simply run the command, provided that there is a touchpad, the script will toggle it off or on. If you run the command in a terminal, it will output what it has done, ex. "touchpad disabled".
+Simply make the script executable, this can be done via `sudo chmod a+x Touchpad_toggle`
 
-Rather than using this command in a terminal, I recommend binding it to a key, such as XF86TouchpadToggle (aka the touchpad media key, provided your laptop has one).
+# Usage
 
+This script can be either used manually in a terminal or bound to a hotkey in your preferred Window Manager/Desktop Environment (recommended) 
 
+The script has no parameters, simply run the command and depending if the touchpad is enabled or disabled, the output is either "trackpad disabled" or "trackpad enabled".
+
+When it comes to binding it to a hotkey, a good option is XF86TouchpadToggle, which represents the toggle touchpad media key on most laptops - provided said laptop has the key. 
